@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;800&family=Roboto+Mono:wght@700&display=swap');
+
+:root{
+    --bg-color: #060608;
+    --text-color: #EEF;
+    --easy-blue: hsl(200deg, 100%, 20%);
+    --easy-magenta: hsl(320deg, 40%, 20%);
+    --dim-white: hsl(0deg, 0%, 30%);
+}
+
+*, input, textarea, button, select{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}

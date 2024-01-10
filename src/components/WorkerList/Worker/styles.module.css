@@ -1,0 +1,19 @@
+.worker{
+    width: 90vw;
+    display: flex;
+    color: var(--easy-blue);
+    justify-content: space-between;
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--easy-magenta);
+    padding: 1rem 1.6rem;
+    margin: .4rem 0;
+}
+
+.worker span{
+    font-weight: 800;
+}
+
+.worker:hover{
+    background-color: var(--easy-magenta);
+    color: var(--text-color);
+}

@@ -1,0 +1,30 @@
+.newWorker{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 4rem 0;
+}
+
+.newWorker input{
+    font-size: 1.2rem;
+    height: 2.5rem;
+    max-width: 350px;
+    width: 80vw;
+    padding: 0 1rem;
+    background-color: transparent;
+    border: 1px solid var(--dim-white);
+}
+
+button{
+    font-size: 1.2rem;
+    max-width: 350px;
+    width: 80vw;
+    height: 2.5rem;
+    background-color: var(--easy-blue);
+}
+
+.inactive{
+    filter: saturate(0) brightness(30%);
+}

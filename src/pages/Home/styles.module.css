@@ -1,0 +1,13 @@
+.title{
+    margin-top: 1.8rem;
+    font-size: 1.5rem;
+    color: var(--easy-magenta);
+    letter-spacing: .435rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.title span {
+    display: block;
+    color: var(--easy-blue);
+    letter-spacing: .750rem;
+}
