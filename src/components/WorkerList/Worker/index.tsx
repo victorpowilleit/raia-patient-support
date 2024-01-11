@@ -1,5 +1,6 @@
 import styles from './styles.module.css'
 import {useLongPress} from "use-long-press";
+import {feedback} from "../../../utils/haptic.ts";
 
 interface WorkerProps {
   name: string,
@@ -12,11 +13,13 @@ interface WorkerProps {
 export function Worker({name, count, index, showChangeCounter, showEditItem}:WorkerProps) {
 
   const longPress = useLongPress(()=>{
+    feedback()
     showEditItem(index)
   })
 
   return (
     <div className={styles.worker} {...longPress()} onClick={()=> {
+      feedback()
       showChangeCounter(index)
     }}>
       <div className="name">{name}</div>

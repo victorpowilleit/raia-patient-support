@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    margin-top: 50vh;
+    transform: translateY(-70%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
