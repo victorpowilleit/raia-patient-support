@@ -7,6 +7,7 @@
     border-bottom: 1px solid var(--ease-magenta);
     padding: 1rem 1.6rem;
     margin: .4rem 0;
+    transition: .2s;
 }
 
 .worker span{
@@ -14,6 +15,6 @@
 }
 
 .worker:active{
-    background-color: var(--ease-magenta);
-    color: var(--text-color);
+    color: var(--text-down);
+    transform: scale(.985);
 }

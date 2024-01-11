@@ -14,19 +14,18 @@ export function App() {
     } else {
       setIsPWA(false);
     }
-  }, []);
-  useEffect(() => {
-    data.length===0&&localStorage.getItem("data")!==null&&
+    localStorage.getItem("data")!==null&&
     setData(JSON.parse(localStorage.getItem("data")!))
-    console.log("retireve data")
   }, []);
+
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data))
-    console.log("write data")
   }, [data]);
+
   return (
     <>
-      {isPWA?<Home data={data} setData={setData}/>:<BrowserWindowMessage/>}
+      {/*{isPWA?<Home data={data} setData={setData}/>:<BrowserWindowMessage/>}*/}
+      <BrowserWindowMessage/>
     </>
   )
 }

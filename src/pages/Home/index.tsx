@@ -10,10 +10,10 @@ interface HomeProps{
 
 export function Home({data, setData}:HomeProps) {
   return (
-    <>
+    <div className={styles.container}>
       <h1 className={styles.title}>Registro de Apoio<span>ao tratamento</span></h1>
       <NewWorkerInput setData={setData}/>
       <WorkerList data={data} setData={setData}/>
-    </>
+    </div>
   )
 }

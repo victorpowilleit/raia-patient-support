@@ -18,7 +18,7 @@ export function NewWorkerInput({setData}:NewWorkerInputProps){
           setWorker("")
         }}
         className={worker.trim().length===0?styles.inactive:""}
-      >Inserir</button>
+      >Inserir Colaborador</button>
     </div>
   )
 }

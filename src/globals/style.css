@@ -3,11 +3,12 @@
 :root{
     --bg-color: #060608;
     --text-color: #EEF;
-    --ease-blue: hsl(200deg, 100%, 20%);
-    --ease-magenta: hsl(320deg, 40%, 20%);
-    --dim-white: hsl(0deg, 0%, 30%);
+    --ease-blue: hsl(200deg, 80%, 40%);
+    --ease-magenta: hsl(320deg, 40%, 50%);
+    --dim-white: hsl(0deg, 0%, 60%);
     --overlap: hsla(215, 30%, 8%, 0.8);
-    --danger: hsl(0, 70%, 40%);
+    --danger: hsl(0, 50%, 40%);
+    --text-down: hsl(0deg, 0%, 30%);
 }
 
 * {

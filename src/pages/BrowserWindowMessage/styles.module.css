@@ -1,9 +1,53 @@
+span{
+    line-height: 1.5rem;
+}
+
 .container{
     display: flex;
     margin-top: 50vh;
-    transform: translateY(-70%);
+    transform: translateY(-60%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
+}
+
+.OS{
+    display: flex;
+    justify-content: center;
+    gap: 15vw;
+}
+
+h1{
+    font-size: 1.4rem;
+    color: dodgerblue;
+}
+
+.vplogo{
+    height: 5rem;
+}
+
+.icon{
+    transition: .2s;
+    filter: saturate(0);
+}
+
+.icon.active{
+    filter: saturate(1);
+}
+
+.text_center{
+    text-align: center;
+}
+
+.shareIcon{
+    height: 1.4rem;
+    margin-left: 1rem;
+    margin-bottom: -.3rem;
+}
+
+.options{
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    margin-bottom: -.3rem;
 }
