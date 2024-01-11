@@ -1,6 +1,9 @@
 import styles from './styles.module.css'
 import {Worker} from "./Worker";
-import {Dispatch, SetStateAction} from "react";
+import {Dispatch, SetStateAction, useState} from "react";
+import {Actions} from "../Actions";
+import {workerIndex} from "../../signals/workers.ts";
+import {DangerousActions} from "../DangerousActions";
 
 interface WorkerListProps {
   data: {name: string, count: number}[]
@@ -9,12 +12,39 @@ interface WorkerListProps {
 
 export function WorkerList({data, setData}:WorkerListProps){
 
-  function addCounter(index:number, value:number){
+  const [showActions, setShowActions] = useState(false)
+  const [showDangerous, setShowDangerous] = useState(false)
+
+  function addToCounter(index:number, value:number){
     setData(prevState => {
       const newList = [...prevState]
       newList[index].count+=value
-      console.log("click")
       return newList
+    })
+  }
+
+  function changeCounter(index:number, value:number){
+    setData(prevState => {
+      const newList = [...prevState]
+      newList[index].count=value
+      return newList
+    })
+  }
+
+  function showChangeCounter(index:number){
+    workerIndex.value=index
+    setShowActions(true)
+  }
+
+  function showEditItem(index:number){
+    workerIndex.value=index
+    setShowDangerous(true)
+  }
+
+  function removeWorker(index:number){
+    setData(prevState =>{
+      prevState.splice(index, 1)
+      return prevState
     })
   }
 
@@ -25,9 +55,12 @@ export function WorkerList({data, setData}:WorkerListProps){
           name={worker.name}
           count={worker.count}
           index={i}
-          addCounter={addCounter}
+          showChangeCounter={showChangeCounter}
+          showEditItem={showEditItem}
         />
       )}
+      {showActions&&<Actions addToCounter={addToCounter} setShowActions={setShowActions}/>}
+      {showDangerous&&<DangerousActions changeCounter={changeCounter} setShowDangerous={setShowDangerous} removeWorker={removeWorker}/>}
     </div>
   )
 }

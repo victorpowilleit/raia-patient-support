@@ -11,7 +11,7 @@ export function NewWorkerInput({setData}:NewWorkerInputProps){
     <div className={styles.newWorker}>
       <input type="text" onChange={(event)=>setWorker(event.target.value)} value={worker}/>
       <button
-        onClick={()=>{
+        onClick={()=>{worker.trim().length>0&&
           setData(prevState => [...prevState, {name: worker, count: 0}])
           setWorker("")
         }}

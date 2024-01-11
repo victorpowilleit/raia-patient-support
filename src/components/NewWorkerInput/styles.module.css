@@ -21,8 +21,7 @@ button{
     font-size: 1.2rem;
     max-width: 350px;
     width: 80vw;
-    height: 2.5rem;
-    background-color: var(--easy-blue);
+    background-color: var(--ease-blue);
 }
 
 .inactive{

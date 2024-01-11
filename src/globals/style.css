@@ -3,9 +3,17 @@
 :root{
     --bg-color: #060608;
     --text-color: #EEF;
-    --easy-blue: hsl(200deg, 100%, 20%);
-    --easy-magenta: hsl(320deg, 40%, 20%);
+    --ease-blue: hsl(200deg, 100%, 20%);
+    --ease-magenta: hsl(320deg, 40%, 20%);
     --dim-white: hsl(0deg, 0%, 30%);
+    --overlap: hsla(215, 30%, 8%, 0.8);
+    --danger: hsl(0, 70%, 40%);
+}
+
+* {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 *, input, textarea, button, select{
@@ -15,6 +23,10 @@
     text-decoration: none;
     color: inherit;
     border: none;
+}
+
+button {
+    height: 4rem;
 }
 
 body{
