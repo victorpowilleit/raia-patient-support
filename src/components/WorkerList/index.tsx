@@ -19,7 +19,8 @@ export function WorkerList({data, setData}: WorkerListProps) {
     setData(prevState => {
       const newList = [...prevState]
       newList[index].count += value
-      return newList
+      const sortedData = newList.sort((a,b)=>a.count>b.count?-1:a.count<b.count?+1:0)
+      return sortedData
     })
   }
 
@@ -27,7 +28,8 @@ export function WorkerList({data, setData}: WorkerListProps) {
     setData(prevState => {
       const newList = [...prevState]
       newList[index].count = value
-      return newList
+      const sortedData = newList.sort((a,b)=>a.count>b.count?-1:a.count<b.count?+1:0)
+      return sortedData
     })
   }
 

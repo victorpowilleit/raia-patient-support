@@ -1,7 +1,7 @@
 {
   "name": "raia-customer-support",
   "private": true,
-  "version": "1.2.2",
+  "version": "1.2.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
