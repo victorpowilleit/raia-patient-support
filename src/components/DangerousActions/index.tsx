@@ -36,7 +36,7 @@ export function DangerousActions({data, changeData, setShowDangerous, removeWork
     <div className={styles.container}>
       <div className={styles.window}>
         <h1>Redefinir Nome</h1>
-        <input type="text" value={name} onChange={(event) => {
+        <input className={styles.nameInput} type="text" value={name} onChange={(event) => {
           setName(event.target.value)
         }}/>
         <h1>Redefinir valor</h1>

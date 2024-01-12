@@ -43,7 +43,12 @@
     color: var(--ease-magenta);
 }
 
-.window button+button {
+.window .nameInput {
+    font-size: 1.7rem;
+    height: 2.3rem;
+}
+
+.window button + button {
     background-color: var(--ease-magenta);
     margin-top: 2rem;
 }
