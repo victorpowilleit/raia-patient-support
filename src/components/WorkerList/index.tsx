@@ -24,10 +24,11 @@ export function WorkerList({data, setData}: WorkerListProps) {
     })
   }
 
-  function changeCounter(index: number, value: number) {
+  function changeData(index: number, value: number, name: string) {
     setData(prevState => {
       const newList = [...prevState]
       newList[index].count = value
+      newList[index].name = name
       const sortedData = newList.sort((a,b)=>a.count>b.count?-1:a.count<b.count?+1:0)
       return sortedData
     })
@@ -62,7 +63,7 @@ export function WorkerList({data, setData}: WorkerListProps) {
         />
       )}
       {showActions && <Actions addToCounter={addToCounter} setShowActions={setShowActions}/>}
-      {showDangerous && <DangerousActions changeCounter={changeCounter} setShowDangerous={setShowDangerous}
+      {showDangerous && <DangerousActions data={data} changeData={changeData} setShowDangerous={setShowDangerous}
                                           removeWorker={removeWorker}/>}
     </div>
   )

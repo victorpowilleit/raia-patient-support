@@ -6,13 +6,13 @@ type DataType = {name: string, count: number}[]
 
 export function App() {
   const [data, setData] = useState<DataType>([])
-  const [isPWA, setIsPWA] = useState(false);
+  const [isPWA, setIsPWA] = useState("unset");
   useEffect(() => {
     // Verificar se o aplicativo está sendo executado em um PWA
     if (window.matchMedia('(display-mode: standalone)').matches) {
-      setIsPWA(true);
+      setIsPWA("yes");
     } else {
-      setIsPWA(false);
+      setIsPWA("no");
     }
     localStorage.getItem("data")!==null&&
     setData(JSON.parse(localStorage.getItem("data")!))
@@ -24,7 +24,7 @@ export function App() {
 
   return (
     <>
-      {isPWA?<Home data={data} setData={setData}/>:<BrowserWindowMessage/>}
+      {isPWA==="yes"?<Home data={data} setData={setData}/>:isPWA==="no"&&<BrowserWindowMessage/>}
       {/*<BrowserWindowMessage/>*/}
     </>
   )
