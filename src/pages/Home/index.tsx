@@ -26,7 +26,7 @@ export function Home({data, setData}:HomeProps) {
     <div className={styles.container}>
       <h1 className={styles.title}>Registro de Apoio<span>ao tratamento</span></h1>
       <NewWorkerInput setData={setData}/>
-      <Total>{counter}</Total>
+      <Total data={data} setData={setData}>{counter}</Total>
       <WorkerList data={data} setData={setData}/>
     </div>
   )
