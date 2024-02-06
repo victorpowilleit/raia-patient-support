@@ -22,6 +22,9 @@ export function App() {
     localStorage.setItem("data", JSON.stringify(data))
   }, [data]);
 
+  //Development Test Param
+  // setIsPWA("no")
+
   return (
     <>
       {isPWA==="yes"?<Home data={data} setData={setData}/>:isPWA==="no"&&<BrowserWindowMessage/>}
@@ -29,3 +32,8 @@ export function App() {
     </>
   )
 }
+/*
+
+
+
+ */
