@@ -1,0 +1,32 @@
+.splash{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    height: 100vh;
+    width: 100vw;
+    animation: splashScreenBG forwards linear 3s;
+}
+
+img{
+    animation: splashScreen forwards linear 3s;
+    width: 70%;
+}
+
+@keyframes splashScreenBG {
+    0%{filter: opacity(0)}
+    5%{filter: opacity(1)}
+    95%{filter: opacity(1)}
+    100%{filter: opacity(0)}
+}
+
+@keyframes splashScreen {
+    0%{filter: opacity(0)}
+    20%{filter: opacity(1)}
+    80%{filter: opacity(1)}
+    100%{filter: opacity(0)}
+}
