@@ -12,7 +12,7 @@
     animation: splashScreenBG forwards linear 3s;
 }
 
-img{
+.splash>img{
     animation: splashScreen forwards linear 3s;
     width: 70%;
 }
