@@ -27,7 +27,7 @@ export function App() {
   return (
     <>
       {
-        isPWA==="no"?<Home data={data} setData={setData}/>:isPWA==="no"&&<BrowserWindowMessage/>
+        isPWA==="yes"?<Home data={data} setData={setData}/>:isPWA==="no"&&<BrowserWindowMessage/>
       }
     </>
   )
