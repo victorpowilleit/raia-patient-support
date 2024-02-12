@@ -48,6 +48,10 @@
     height: 2.3rem;
 }
 
+.window button{
+    width: 100%;
+}
+
 .window button + button {
     background-color: var(--ease-magenta);
     margin-top: 2rem;

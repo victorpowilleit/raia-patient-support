@@ -15,7 +15,10 @@ export default defineConfig({
         lang: "pt-br",
         name: "Raia Customer Support Counter",
         short_name: "RCS",
-      }
+      },
     })
   ],
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
+  },
 })

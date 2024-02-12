@@ -39,6 +39,10 @@
     color: var(--ease-magenta);
 }
 
+.window button{
+    width: 100%;
+}
+
 .window button+button {
     background-color: var(--ease-magenta);
 }

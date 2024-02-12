@@ -7,6 +7,8 @@ type DataType = {name: string, count: number}[]
 export function App() {
   const [data, setData] = useState<DataType>([])
   const [isPWA, setIsPWA] = useState("unset");
+  console.info("Home")
+
   useEffect(() => {
     // Verificar se o aplicativo está sendo executado em um PWA
     if (window.matchMedia('(display-mode: standalone)').matches) {

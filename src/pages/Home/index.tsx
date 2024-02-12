@@ -6,7 +6,7 @@ import {useSignal} from "@preact/signals-react";
 import {Total} from "../../components/Total";
 import {Splash} from "../../components/Splash";
 
-interface HomeProps{
+export interface HomeProps{
   data: {name: string, count: number}[]
   setData: Dispatch<SetStateAction<{name: string, count: number}[]>>
 }
@@ -34,7 +34,7 @@ export function Home({data, setData}:HomeProps) {
     <div className={styles.container}>
       {splash}
       <h1 className={styles.title}>Registro de Apoio<span>ao tratamento</span></h1>
-      <NewWorkerInput setData={setData}/>
+      <NewWorkerInput total={counter} data={data} setData={setData}/>
       <Total data={data} setData={setData}>{counter}</Total>
       <WorkerList data={data} setData={setData}/>
     </div>

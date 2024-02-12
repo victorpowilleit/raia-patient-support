@@ -17,12 +17,30 @@
     border: 1px solid var(--dim-white);
 }
 
+.buttons{
+    display: flex;
+    max-width: 350px;
+    gap: .5rem;
+    :first-child{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .8rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: var(--ease-magenta);
+        img{
+            height: 100%;
+        }
+    }
+}
+
 button{
     font-size: 1.2rem;
-    max-width: 350px;
     width: 80vw;
     background-color: var(--ease-blue);
 }
+
 
 .inactive{
     filter: saturate(0) brightness(30%);
