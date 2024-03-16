@@ -4,7 +4,7 @@ import {Dispatch, SetStateAction, useState} from "react";
 import {Actions} from "../Actions";
 import {workerIndex} from "../../signals/workers.ts";
 import {DangerousActions} from "../DangerousActions";
-import {listItemTitle} from "../../signals/tweaks.ts";
+import {listItemTitle} from "../../tweaks.ts";
 
 interface WorkerListProps {
   data: { name: string, count: number }[]

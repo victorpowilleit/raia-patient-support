@@ -1,8 +1,7 @@
-const devMode = true
-
 import {Home} from "./pages/Home";
 import {useEffect, useState} from "react";
 import {BrowserWindowMessage} from "./pages/BrowserWindowMessage";
+import {devMode} from "./tweaks.ts";
 
 type DataType = {name: string, count: number}[]
 type LogType = {time: number, record: string}[]

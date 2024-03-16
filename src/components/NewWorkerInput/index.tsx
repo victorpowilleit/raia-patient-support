@@ -3,7 +3,7 @@ import {Dispatch, SetStateAction, useState} from "react";
 import {feedback} from "../../utils/haptic.ts";
 import whatsappIcon from "../../assets/icons/Whatsapp.svg"
 import {Signal} from "@preact/signals-react";
-import {inputButtonText, shoWhatsappButton, listItemTitle, whatsappTextHeader} from '../../signals/tweaks'
+import {inputButtonText, showWhatsappButton, listItemTitle, whatsappTextHeader} from '../../tweaks.ts'
 
 interface handleInsertWorkerProps {
   worker: string
@@ -54,8 +54,8 @@ export function NewWorkerInput({total, data, setData, log, setLog}:NewWorkerProp
   return(
     <div className={styles.newWorker}>
       <input type="text" onChange={(event)=>setWorker(event.target.value)} value={worker}/>
-      <div className={shoWhatsappButton?styles.buttons:styles.button}>
-        {shoWhatsappButton&&<button
+      <div className={showWhatsappButton?styles.buttons:styles.button}>
+        {showWhatsappButton&&<button
           onClick={() => {
             handleWhatsappSend({total, data})
           }}

@@ -7,7 +7,7 @@ import {Total} from "../../components/Total";
 import {Splash} from "../../components/Splash";
 import {Log} from "../../components/Log";
 import {useSwipeable} from "react-swipeable";
-import {title_BottomLine, title_TopLine} from "../../signals/tweaks.ts";
+import {title_BottomLine, title_TopLine} from "../../tweaks.ts";
 
 export interface HomeProps {
   data: { name: string, count: number }[]
