@@ -20,10 +20,12 @@ export function App() {
     }
     localStorage.getItem("data")!==null&&
     setData(JSON.parse(localStorage.getItem("data")!))
+    setLog(JSON.parse(localStorage.getItem("log")!))
   }, []);
 
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data))
+    localStorage.setItem("log", JSON.stringify(log))
   }, [data]);
 
   return (
