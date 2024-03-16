@@ -18,10 +18,9 @@ export function WorkerList({data, setData, log, setLog}: WorkerListProps) {
   const [showDangerous, setShowDangerous] = useState(false)
 
   function addToCounter(index: number, value: number) {
-    let name = ""
+    const name = data[index].name
     setData(prevState => {
       const newList = [...prevState]
-      name = newList[index].name
       newList[index].count += value
       const sortedData = newList.sort((a,b)=>a.count>b.count?-1:a.count<b.count?+1:0)
       return sortedData
@@ -34,12 +33,10 @@ export function WorkerList({data, setData, log, setLog}: WorkerListProps) {
   }
 
   function changeData(index: number, value: number, name: string) {
-    let oldName = ""
-    let count = 0
+    const oldName = data[index].name
+    const count = data[index].count
     setData(prevState => {
       const newList = [...prevState]
-      oldName = newList[index].name
-      count = newList[index].count
       newList[index].count = value
       newList[index].name = name
       return newList.sort((a,b)=>a.count>b.count?-1:a.count<b.count?+1:0)
@@ -52,7 +49,7 @@ export function WorkerList({data, setData, log, setLog}: WorkerListProps) {
   }
 
   function removeWorker(index: number) {
-    let name = ""
+    const name = data[index].name
     const newData = [...data]
     newData.splice(index, 1)
     setData(newData)
