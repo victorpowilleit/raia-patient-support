@@ -4,13 +4,14 @@ import android from '../../assets/icons/Icon_Android.svg'
 import share from '../../assets/icons/Icon_Share.svg'
 import vpdev from '../../assets/logos/VPDevLogo.svg'
 import {useState} from "react";
+import {appName} from "../../tweaks.ts";
 
 export function BrowserWindowMessage() {
   const [OS, setOS] = useState("")
   return (
     <div className={styles.container}>
       <img className={styles.vplogo} src={vpdev} alt="VPDev Logo"/>
-      <h1>APP: RAIA-CUSTOMER-SUPPORT</h1>
+      <h1>APP: {appName}</h1>
       <span className={styles.text_center}>
       PARA INSTALAR ESSE APP ESCOLHA SEU<br/>SISTEMA OPERACIONAL E SIGA OS PASSOS ABAIXO:
       </span>

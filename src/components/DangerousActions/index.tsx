@@ -2,6 +2,7 @@ import styles from './styles.module.css'
 import {Dispatch, SetStateAction, useState} from "react";
 import {workerIndex} from "../../signals/workers.ts";
 import {feedback} from "../../utils/haptic.ts";
+import {listItemTitle} from "../../tweaks.ts";
 
 interface DangerousActionsProps {
   data: { name: string, count: number }[]
@@ -44,7 +45,7 @@ export function DangerousActions({data, changeData, setShowDangerous, removeWork
           setValue(event.target.value)
         }}/>
         <button onClick={confirm}>CONFIRMAR</button>
-        <h1 className={styles.danger_text}>Remover colaborador</h1>
+        <h1 className={styles.danger_text}>Remover {listItemTitle}</h1>
         <button className={styles.danger} onClick={remove}>EXCLUIR</button>
         <button onClick={() => {
           feedback();
