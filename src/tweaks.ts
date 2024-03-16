@@ -1,8 +1,8 @@
 export const devMode = false
-export const showWhatsappButton = false
-export const appName = "NATALIDADE-PET"
-export const title_TopLine = "REGISTRO DE"
-export const title_BottomLine = "NATALIDADE"
-export const listItemTitle = "Pet"
+export const showWhatsappButton = true
+export const appName = "RAIA-CUSTOMER-SUPPORT"
+export const title_TopLine = "REGISTRO DE APOIO"
+export const title_BottomLine = "AO TRATAMENTO"
+export const listItemTitle = "Colaborador"
 export const inputButtonText = `Inserir ${listItemTitle}`
-export const whatsappTextHeader = "Natalidade dos Pets "
+export const whatsappTextHeader = "Apoio ao Tratamento"

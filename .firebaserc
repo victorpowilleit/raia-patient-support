@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "raia-customer-support"
-  }
+    "default": "raia-customer-support",
+    "natalidade-pet": "natalidade-pet"
+  },
+  "targets": {},
+  "etags": {}
 }
