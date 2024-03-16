@@ -13,6 +13,7 @@ export function Log({isLogOpened, swipeClose, log}:LogProps){
     <div {...swipeClose} className={isLogOpened?styles.opened:styles.closed}>
       <h1 className={styles.title}>LOG DE EVENTOS</h1>
       <div className={styles.logList}>
+        {log.length===0&&<div className={styles.warn}>Não há eventos registrados.</div>}
         <ul>
           {log.map(data=> {
             const date = new Date(data.time)

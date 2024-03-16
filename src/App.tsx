@@ -8,8 +8,8 @@ type LogType = {time: number, record: string}[]
 const devMode = false
 
 export function App() {
-  const [data, setData] = useState<DataType>([])
   const [isPWA, setIsPWA] = useState("unset");
+  const [data, setData] = useState<DataType>([])
   const [log, setLog] = useState<LogType>([])
 
   useEffect(() => {
@@ -20,6 +20,7 @@ export function App() {
     }
     localStorage.getItem("data")!==null&&
     setData(JSON.parse(localStorage.getItem("data")!))
+    localStorage.getItem("log")!==null&&
     setLog(JSON.parse(localStorage.getItem("log")!))
   }, []);
 
