@@ -1,0 +1,62 @@
+.container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--overlap);
+}
+.window {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 450px;
+    width: 90%;
+    height: fit-content;
+    border-radius: 5px;
+    border: 1px solid var(--dim-white);
+    background-color: var(--overlap);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.window h1 {
+    color: var(--ease-blue);
+}
+
+.window h1.danger_text{
+    color: var(--danger);
+}
+
+.window input {
+    font-size: 3rem;
+    height: 4rem;
+    width: 100%;
+    text-align: center;
+    color: var(--ease-magenta);
+}
+
+.window .nameInput {
+    font-size: 1.7rem;
+    height: 2.3rem;
+}
+
+.window button{
+    width: 100%;
+}
+
+.window button + button {
+    background-color: var(--ease-magenta);
+    margin-top: 2rem;
+}
+
+.danger{
+    background-color: var(--danger);
+}

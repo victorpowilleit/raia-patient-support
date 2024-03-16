@@ -1,0 +1,49 @@
+.opened{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    transition: .5s;
+    background-color: #060608;
+}
+.closed{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    bottom: 0;
+    right: -100vw;
+    left: 100vw;
+    z-index: 10;
+    transition: .5s;
+    opacity: 0;
+}
+.title{
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.logList{
+    padding: 3rem;
+    margin: 1.5rem 0 3rem;
+    overflow-y: scroll;
+    contain: paint;
+    >ul{
+        list-style: none;
+        >li{
+            >p{
+                font-weight: bold;
+                color: var(--ease-blue)
+            }
+            >span{
+                color: var(--ease-magenta);
+            }
+        }
+        >li+li{
+            margin-top: 2rem;
+        }
+    }
+}

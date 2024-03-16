@@ -1,0 +1,7 @@
+.workersList{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-bottom: 5rem;
+}
