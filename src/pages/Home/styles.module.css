@@ -21,3 +21,10 @@
     color: var(--ease-blue);
     letter-spacing: .750rem;
 }
+.dev_logToggle{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 50;
+    cursor: pointer;
+}

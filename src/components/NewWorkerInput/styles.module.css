@@ -33,6 +33,11 @@
         }
     }
 }
+.button{
+    display: flex;
+    max-width: 350px;
+    gap: .5rem;
+}
 
 button{
     font-size: 1.2rem;

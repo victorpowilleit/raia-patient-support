@@ -7,15 +7,17 @@ import {Total} from "../../components/Total";
 import {Splash} from "../../components/Splash";
 import {Log} from "../../components/Log";
 import {useSwipeable} from "react-swipeable";
+import {title_BottomLine, title_TopLine} from "../../signals/tweaks.ts";
 
 export interface HomeProps {
   data: { name: string, count: number }[]
   setData: Dispatch<SetStateAction<{ name: string, count: number }[]>>
   log: {time: number, record: string}[]
   setLog: Dispatch<SetStateAction<{time: number, record: string}[]>>
+  devMode: boolean
 }
 
-export function Home({data, setData, log, setLog}: HomeProps) {
+export function Home({data, setData, log, setLog, devMode}: HomeProps) {
 
   const [isLogOpened, setIsLogOpened] = useState<boolean>(false)
   const counter = useSignal(0)
@@ -45,8 +47,9 @@ export function Home({data, setData, log, setLog}: HomeProps) {
   return (
     <>
       {splash}
+      {devMode&&<div className={styles.dev_logToggle} onClick={()=>setIsLogOpened(!isLogOpened)}>LOG</div>}
       <div {...swipeOpen} className={styles.container}>
-        <h1 className={styles.title}>Registro de Apoio<span>ao tratamento</span></h1>
+        <h1 className={styles.title}>{title_TopLine}<span>{title_BottomLine}</span></h1>
         <NewWorkerInput total={counter} data={data} setData={setData} log={log} setLog={setLog}/>
         <Total data={data} setData={setData} setLog={setLog}>{counter}</Total>
         <WorkerList data={data} setData={setData} log={log} setLog={setLog}/>

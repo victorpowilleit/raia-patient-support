@@ -4,6 +4,7 @@ import {Dispatch, SetStateAction, useState} from "react";
 import {Actions} from "../Actions";
 import {workerIndex} from "../../signals/workers.ts";
 import {DangerousActions} from "../DangerousActions";
+import {listItemTitle} from "../../signals/tweaks.ts";
 
 interface WorkerListProps {
   data: { name: string, count: number }[]
@@ -55,7 +56,7 @@ export function WorkerList({data, setData, log, setLog}: WorkerListProps) {
     setData(newData)
     const newLogData = {
       time: new Date().getTime(),
-      record: `Colaborador [${name}] removido`
+      record: `${listItemTitle} [${name}] removido`
     }
     setLog([...log, newLogData])
   }
@@ -75,6 +76,7 @@ export function WorkerList({data, setData, log, setLog}: WorkerListProps) {
     <div className={styles.workersList}>
       {data.map((worker, i) =>
         <Worker
+          key={worker.name + i}
           name={worker.name}
           count={worker.count}
           index={i}

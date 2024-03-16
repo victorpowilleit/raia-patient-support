@@ -3,6 +3,7 @@ import {Dispatch, SetStateAction, useState} from "react";
 import {feedback} from "../../utils/haptic.ts";
 import whatsappIcon from "../../assets/icons/Whatsapp.svg"
 import {Signal} from "@preact/signals-react";
+import {inputButtonText, shoWhatsappButton, listItemTitle, whatsappTextHeader} from '../../signals/tweaks'
 
 interface handleInsertWorkerProps {
   worker: string
@@ -30,7 +31,7 @@ function handleInsertWorker({worker, setData, setWorker, log, setLog}:handleInse
     feedback()
     setData(prevState => [...prevState, {name: worker, count: 0}])
     const newEntry = {
-      record: `Colaborador [${worker}] adicionado.`,
+      record: `${listItemTitle} [${worker}] adicionado.`,
       time: new Date().getTime()
     }
     setLog([...log, newEntry])
@@ -44,7 +45,7 @@ function handleWhatsappSend({total, data}:WhatsappSend){
   data.forEach(colab=>{
     individualData.push(`${colab.name}: ${colab.count}`)
   })
-  const textValue = `Apoio ao Tratamento%0ATOTAL: ${total}%0A${individualData.join('%0A')}`
+  const textValue = `${whatsappTextHeader}%0ATOTAL: ${total}%0A${individualData.join('%0A')}`
   window.open(`https://api.whatsapp.com/send?text=${textValue}`)
 }
 
@@ -53,21 +54,21 @@ export function NewWorkerInput({total, data, setData, log, setLog}:NewWorkerProp
   return(
     <div className={styles.newWorker}>
       <input type="text" onChange={(event)=>setWorker(event.target.value)} value={worker}/>
-      <div className={styles.buttons}>
-      <button
-        onClick={()=>{
-          handleWhatsappSend({total, data})
-        }}
-        className={data.length===0?styles.inactive:""}
-      >
-        <img src={whatsappIcon} alt=""/>
-      </button>
+      <div className={shoWhatsappButton?styles.buttons:styles.button}>
+        {shoWhatsappButton&&<button
+          onClick={() => {
+            handleWhatsappSend({total, data})
+          }}
+          className={data.length === 0 ? styles.inactive : ""}
+        >
+          <img src={whatsappIcon} alt=""/>
+        </button>}
       <button
         onClick={()=>{
           handleInsertWorker({worker, setData, setWorker, log, setLog})
         }}
         className={worker.trim().length===0?styles.inactive:""}
-      >Inserir Colaborador</button>
+      >{inputButtonText}</button>
       </div>
     </div>
   )
